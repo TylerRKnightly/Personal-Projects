@@ -17,6 +17,10 @@ export class SiteService {
   async create(): Promise<void> {
     const site = new Site();
     site.address = '123';
+    site.city = 'Burb';
+    site.siteName = 'Dke';
+    site.zipCode = '23232';
+    site.state = 'FL';
     await this.siteRepository.save(site);
   }
 }
