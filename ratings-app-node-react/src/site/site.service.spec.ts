@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SiteModule } from 'src/site/site.module';
+import { SiteModule } from './site.module';
 import { SiteService } from './site.service';
 
 describe('SiteService', () => {

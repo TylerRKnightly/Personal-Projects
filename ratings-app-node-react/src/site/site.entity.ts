@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Rater } from '../rater/rater.entity';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  JoinTable,
+  ManyToMany,
+} from 'typeorm';
 
 @Entity()
 export class Site {
@@ -19,4 +26,8 @@ export class Site {
 
   @Column()
   zipCode: string;
+
+  @ManyToMany(() => Rater)
+  @JoinTable()
+  raters: Rater[];
 }

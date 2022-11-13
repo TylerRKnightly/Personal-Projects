@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SiteService } from 'src/service/site.service';
+import { SiteService } from './site.service';
 import { SiteController } from './site.controller';
+import { SiteModule } from './site.module';
 
 describe('SiteController', () => {
   let controller: SiteController;
@@ -9,6 +10,7 @@ describe('SiteController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [SiteController],
       providers: [SiteService],
+      imports: [SiteModule],
     }).compile();
 
     controller = module.get<SiteController>(SiteController);

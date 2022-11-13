@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { SiteService } from '../service/site.service';
+import { SiteService } from './site.service';
 
 @Controller('site')
 export class SiteController {
