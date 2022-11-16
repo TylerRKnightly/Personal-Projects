@@ -38,20 +38,20 @@ import { SubjectModule } from './subject/subject.module';
     RaterModule,
     SubjectModule,
   ],
-  controllers: [
-    AppController,
-    SiteController,
-    VisitController,
-    RaterController,
-    SubjectController,
-  ],
-  providers: [
-    AppService,
-    SiteService,
-    VisitService,
-    RaterService,
-    SubjectService,
-  ],
+  // controllers: [
+  //   AppController,
+  //   SiteController,
+  //   VisitController,
+  //   RaterController,
+  //   SubjectController,
+  // ],
+  // providers: [
+  //   AppService,
+  //   SiteService,
+  //   VisitService,
+  //   RaterService,
+  //   SubjectService,
+  // ],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}

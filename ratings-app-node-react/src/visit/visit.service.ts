@@ -9,4 +9,15 @@ export class VisitService {
     @InjectRepository(Visit)
     private visitRepository: Repository<Visit>,
   ) {}
+
+  findAll(): Promise<Visit[]> {
+    return this.visitRepository.find();
+  }
+
+  findVisitById(visitId: number) {
+    return this.visitRepository
+      .createQueryBuilder('visit')
+      .where('user.id = :id', { id: visitId })
+      .getOne();
+  }
 }

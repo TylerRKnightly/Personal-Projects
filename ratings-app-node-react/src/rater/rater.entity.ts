@@ -1,4 +1,3 @@
-import { Site } from 'src/site/site.entity';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

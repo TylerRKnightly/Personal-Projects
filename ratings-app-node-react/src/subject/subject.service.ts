@@ -9,4 +9,8 @@ export class SubjectService {
     @InjectRepository(Subject)
     private subjectRepository: Repository<Subject>,
   ) {}
+
+  findAll(): Promise<Subject[]> {
+    return this.subjectRepository.find();
+  }
 }
