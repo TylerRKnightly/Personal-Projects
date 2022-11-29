@@ -14,6 +14,13 @@ export class SiteService {
   findAll(): Promise<Site[]> {
     return this.siteRepository.find();
   }
+
+  findSiteById(siteId: number) {
+    return this.siteRepository
+      .createQueryBuilder('site')
+      .where('site.id = :id', { id: siteId })
+      .getOne();
+  }
   async create(): Promise<void> {
     const site = new Site();
     site.address = '123';

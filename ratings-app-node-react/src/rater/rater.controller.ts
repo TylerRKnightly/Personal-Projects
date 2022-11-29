@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { Rater } from './rater.entity';
 import { RaterService } from './rater.service';
 
@@ -15,5 +15,10 @@ export class RaterController {
   @Get('/all')
   findAll(): Promise<Rater[]> {
     return this.raterService.findAll();
+  }
+
+  @Get('/:id')
+  findRaterById(@Param('id', ParseIntPipe) id: number): Promise<Rater> {
+    return this.raterService.findRaterById(id);
   }
 }
