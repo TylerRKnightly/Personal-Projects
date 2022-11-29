@@ -6,16 +6,16 @@ export class Visit {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   mmse: string;
 
-  @Column()
+  @Column({ nullable: true })
   rbans: string;
 
-  @Column()
+  @Column({ nullable: true })
   cdr: string;
 
-  @Column()
+  @Column({ nullable: true })
   ravlt: string;
 
   @Column()

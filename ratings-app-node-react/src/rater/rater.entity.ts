@@ -16,4 +16,7 @@ export class Rater {
 
   @Column()
   lastName: string;
+
+  @Column()
+  isAuth: boolean;
 }

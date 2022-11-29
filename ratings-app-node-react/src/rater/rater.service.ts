@@ -21,11 +21,29 @@ export class RaterService {
       .where('rater.id = :id', { id: raterId })
       .getOne();
   }
-  async create(): Promise<void> {
-    this.raterArray.forEach((rater) => {
-      this.raterRepository.save(rater);
-    });
+  create(rater: Rater): Promise<Rater> {
+    return this.raterRepository.save(rater);
   }
+
+  update(rater: Rater) {
+    return this.raterRepository
+      .createQueryBuilder('rater')
+      .update(Rater)
+      .set({
+        firstName: rater.firstName,
+        lastName: rater.lastName,
+        username: rater.username,
+        passwordHash: rater.passwordHash,
+        isAuth: rater.isAuth,
+      })
+      .where('rater.id = :id', { id: rater.id })
+      .execute();
+  }
+
+  delete(id: number) {
+    this.raterRepository.delete(id);
+  }
+
   raterArray = [
     {
       username: 'one',

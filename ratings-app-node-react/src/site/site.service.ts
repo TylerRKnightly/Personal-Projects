@@ -21,13 +21,7 @@ export class SiteService {
       .where('site.id = :id', { id: siteId })
       .getOne();
   }
-  async create(): Promise<void> {
-    const site = new Site();
-    site.address = '123';
-    site.city = 'Burb';
-    site.siteName = 'Dke';
-    site.zipCode = '23232';
-    site.state = 'FL';
+  async create(site: Site): Promise<void> {
     await this.siteRepository.save(site);
   }
 }

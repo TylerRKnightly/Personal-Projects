@@ -15,7 +15,7 @@ export class Subject {
   @Column()
   address: string;
 
-  @Column()
+  @Column({ nullable: true })
   notes: string;
 
   @OneToMany(() => Visit, (visit) => visit.subject)
